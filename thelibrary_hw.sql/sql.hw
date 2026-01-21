@@ -55,6 +55,29 @@ max(total_score) as HIGHEST,
 min(total_score) as LOWEST
 from day_1_exam
 
+Q2. List the names of MBA students who scored above 35 on Day 2.
+select
+T2.full_name,
+T1.total_score
+from day_2_exam as T1
+join "RSVP_New" as T2
+on T1.hall_ticket_no = T2.hall_ticket_no
+where total_score>35
+
+Q3. Identify students whose Day 2 score was strictly higher than their Day 1 score.
+select
+T1.full_name,
+T2.total_score as DAY_1,
+T3.total_score as DAY_2
+from "RSVP_New" as T1
+join day_1_exam as T2
+on T1.hall_ticket_no = T2.hall_ticket_no
+join day_2_exam as T3
+on T1.hall_ticket_no = T3.hall_ticket_no
+
+
+ 
+
 
 
 
