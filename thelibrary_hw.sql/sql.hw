@@ -47,3 +47,15 @@ from day_1_exam
 where total_score<35
 group by result_status
 
+21/01/2026,WEDNESDAY
+Q1. Find the Average, Maximum, and Minimum marks obtained in the Day 1 Exam to see how the class performed as a whole.
+select
+avg(total_score) as AVERAGE,
+max(total_score) as HIGHEST,
+min(total_score) as LOWEST
+from day_1_exam
+
+
+
+
+
