@@ -1,1 +1,49 @@
 thelibrary_hw.sql/
+Q1: Count how many students passed the exam.
+select
+count(result_status)
+from day_1_exam
+group by result_status
+
+Q2: Find the average score of all students who failed.
+select
+distinct(total_score)
+from day_1_exam
+where result_status ='Fail'
+
+Q3: Get the highest score among all students.
+select
+max(total_score) as highest
+from day_1_exam
+
+Q4: Get the lowest score among passed students.
+select
+min(total_score) as lowest
+from day_1_exam
+where result_status ='Pass'
+
+Q5: Sum the total marks of all students who scored above 40.
+select
+sum (total_score)
+from day_1_exam
+where total_score >40
+
+Q6: Count students by result status for those who scored 35 or more.
+
+Q7: Find average score grouped by result status for students with scores between 30 and 40.
+select
+avg(total_score),
+result_status
+from day_1_exam
+where total_score between 30 and 40
+group by result_status
+
+Q8: Get maximum and minimum scores grouped by result status for students who scored less than 35.
+select
+MAX(total_score) as HIGHEST,
+MIN(total_score) as LOWEST,
+result_status
+from day_1_exam
+where total_score<35
+group by result_status
+
